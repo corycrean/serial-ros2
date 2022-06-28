@@ -9,6 +9,7 @@ ament_export_libraries(${PROJECT_NAME})
 ## Sources
 ## Add serial library
 add_library(${PROJECT_NAME}
+    SHARED
     src/serial.cc
     include/serial/serial.h
     include/serial/v8stdint.h
@@ -57,10 +58,9 @@ install(TARGETS ${PROJECT_NAME}
 install(FILES include/serial/serial.h include/serial/v8stdint.h
     DESTINATION include/serial
 )
-
-## Tests
-#if(BUILD_TESTING)
-#    add_subdirectory(tests)
-#endif()
+# # Tests
+# if(BUILD_TESTING)
+# add_subdirectory(tests)
+# endif()
 
 ament_package()
